@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Happiness Insights | World Happiness Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar">
+            <div class="logo">Happiness<span>Index</span></div>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#predictor">Predictor</a></li>
+            </ul>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Understanding Global Well-being</h1>
+                <p>Explore data-driven insights into what makes nations happy and predict happiness scores based on key
+                    pillars of well-being.</p>
+                <div class="hero-btns">
+                    <a href="#dashboard" class="btn btn-primary">Explore Data</a>
+                    <a href="#predictor" class="btn btn-secondary">Try Predictor</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="dashboard" class="section">
+            <div class="container">
+                <h2 class="section-title">Global Happiness Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Happiest Region</h3>
+                        <p id="top-region">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Avg. Happiness Score</h3>
+                        <p id="avg-score">Loading...</p>
+                    </div>
+                </div>
+                <div class="chart-container glass">
+                    <canvas id="happinessChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="predictor" class="section">
+            <div class="container">
+                <h2 class="section-title">Happiness Predictor</h2>
+                <div class="predictor-wrapper glass">
+                    <div class="form-container">
+                        <form id="predict-form">
+                            <div class="form-group">
+                                <label for="economy">Economy (GDP per Capita)</label>
+                                <input type="range" id="economy" min="0" max="2" step="0.01" value="1.0">
+                                <span class="val-display">1.0</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="family">Family (Social Support)</label>
+                                <input type="range" id="family" min="0" max="1.5" step="0.01" value="0.75">
+                                <span class="val-display">0.75</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="health">Health (Life Expectancy)</label>
+                                <input type="range" id="health" min="0" max="1.2" step="0.01" value="0.6">
+                                <span class="val-display">0.6</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="freedom">Freedom</label>
+                                <input type="range" id="freedom" min="0" max="0.8" step="0.01" value="0.4">
+                                <span class="val-display">0.4</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="trust">Trust (Gov Corruption)</label>
+                                <input type="range" id="trust" min="0" max="0.6" step="0.01" value="0.3">
+                                <span class="val-display">0.3</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="generosity">Generosity</label>
+                                <input type="range" id="generosity" min="0" max="0.8" step="0.01" value="0.4">
+                                <span class="val-display">0.4</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary full-width">Predict Score</button>
+                        </form>
+                    </div>
+                    <div class="result-container">
+                        <div class="result-circle">
+                            <span id="predicted-score">--</span>
+                            <small>Predictive Score</small>
+                        </div>
+                        <p class="result-desc">Adjust the sliders to see how different factors impact the overall
+                            happiness of a nation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Happiness Index Platform. Data based on World Happiness Report 2015.</p>
+        </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
